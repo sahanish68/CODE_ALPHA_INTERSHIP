@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A responsive image gallery with category filters and a lightbox." />
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Image Gallery home">
+      <span class="brand-icon" aria-hidden="true">▣</span>
+      <span><strong>Image <em>Gallery</em></strong><small>Explore beautiful moments, one image at a time.</small></span>
+    </a>
+    <label class="search-box">
+      <span aria-hidden="true">⌕</span>
+      <input id="searchInput" type="search" placeholder="Search images..." aria-label="Search images" />
+    </label>
+  </header>
+
+  <main class="container">
+    <nav class="filters" aria-label="Filter images by category">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="nature">🌿 Nature</button>
+      <button class="filter-btn" data-category="cities">▦ Cities</button>
+      <button class="filter-btn" data-category="animals">🐾 Animals</button>
+      <button class="filter-btn" data-category="travel">✈ Travel</button>
+    </nav>
+
+    <p id="resultsCount" class="results-count" aria-live="polite"></p>
+    <section id="gallery" class="gallery" aria-label="Image gallery"></section>
+    <p id="emptyState" class="empty-state" hidden>No images match your search. Try another keyword or category.</p>
+  </main>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
+    <button id="closeBtn" class="icon-btn close-btn" aria-label="Close image viewer">×</button>
+    <button id="prevBtn" class="icon-btn nav-btn prev-btn" aria-label="Previous image">‹</button>
+    <figure class="lightbox-figure">
+      <img id="lightboxImage" src="" alt="" />
+      <figcaption>
+        <div><h2 id="lightboxTitle"></h2><p id="lightboxCategory"></p></div>
+        <span id="imageCounter" class="image-counter"></span>
+      </figcaption>
+    </figure>
+    <button id="nextBtn" class="icon-btn nav-btn next-btn" aria-label="Next image">›</button>
+  </div>
+
+  <!-- <footer class="site-footer">
+    <span>▧ Responsive design</span><span>✧ Smooth hover effects</span><span>↔ Next / previous</span><span>◉ Category filters</span><span>▣ Lightbox view</span>
+  </footer> -->
+  <script src="script.js"></script>
+</body>
+</html>
